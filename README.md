@@ -1,5 +1,7 @@
 # Epipolar Geometry and Fundamental Matrix Estimation
 
+[中文版](README_zh.md) | English
+
 Computer Vision Experiment 4: Implementation of epipolar geometry algorithms including the 8-point algorithm and RANSAC framework for fundamental matrix estimation.
 
 ## Overview
@@ -154,6 +156,8 @@ The project generates multiple visualizations:
 MIT License
 
 ## Author
+
+**weizhena**
 
 Computer Vision Course - Experiment 4
 
