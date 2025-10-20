@@ -1,0 +1,11 @@
+{
+  "num_features_left": 498,
+  "num_features_right": 465,
+  "num_initial_matches": 133,
+  "ransac_inlier_count": 101,
+  "ransac_inlier_ratio": 0.7593984962406015,
+  "ransac_iterations": 109,
+  "symmetric_distance_mean": 0.31620032706290124,
+  "symmetric_distance_median": 0.15439323309175834,
+  "symmetric_distance_max": 2.372547413792509
+}

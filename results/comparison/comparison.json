@@ -1,0 +1,9 @@
+{
+  "epipole_left_diff_px": 11876.058289837863,
+  "epipole_right_diff_px": 1636.3373459216507,
+  "task1_mean_error": 0.06924528433696936,
+  "task2_mean_error": 0.31620032706290124,
+  "task1_num_matches": 168,
+  "task2_num_inliers": 101,
+  "task2_inlier_ratio": 0.7593984962406015
+}

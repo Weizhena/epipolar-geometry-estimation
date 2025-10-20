@@ -1,0 +1,12 @@
+{
+  "num_matches": 168,
+  "symmetric_distance_mean": 0.06924528433696936,
+  "symmetric_distance_median": 0.03156169475120959,
+  "symmetric_distance_std": 0.09633577032100821,
+  "symmetric_distance_max": 0.5559638031010061,
+  "singular_values": [
+    2.089894484425894,
+    1.081679529559838,
+    8.893316575167653e-20
+  ]
+}
