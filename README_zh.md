@@ -1,8 +1,13 @@
 # 对极几何与基础矩阵估计
+# Epipolar Geometry and Fundamental Matrix Estimation
 
 中文版 | [English](README.md)
 
+> **关键词 / Keywords**: 计算机视觉 Computer Vision | 对极几何 Epipolar Geometry | 基础矩阵 Fundamental Matrix | 8点算法 8-Point Algorithm | RANSAC | SIFT | 立体视觉 Stereo Vision | 运动恢复结构 Structure from Motion
+
 计算机视觉实验4：实现对极几何算法，包括8点算法和RANSAC框架进行基础矩阵估计。
+
+Computer Vision Experiment 4: Implementation of epipolar geometry algorithms including the 8-point algorithm and RANSAC framework for fundamental matrix estimation.
 
 ## 项目概述
 
