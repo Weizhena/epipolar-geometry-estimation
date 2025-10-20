@@ -1,59 +1,59 @@
-# Epipolar Geometry and Fundamental Matrix Estimation
 # 对极几何与基础矩阵估计
+# Epipolar Geometry and Fundamental Matrix Estimation
 
-[中文版](README_zh.md) | English
+中文版 | [English](README_en.md)
 
-> **Keywords / 关键词**: Computer Vision 计算机视觉 | Epipolar Geometry 对极几何 | Fundamental Matrix 基础矩阵 | 8-Point Algorithm 8点算法 | RANSAC | SIFT | Stereo Vision 立体视觉 | Structure from Motion 运动恢复结构
-
-Computer Vision Experiment 4: Implementation of epipolar geometry algorithms including the 8-point algorithm and RANSAC framework for fundamental matrix estimation.
+> **关键词 / Keywords**: 计算机视觉 Computer Vision | 对极几何 Epipolar Geometry | 基础矩阵 Fundamental Matrix | 8点算法 8-Point Algorithm | RANSAC | SIFT | 立体视觉 Stereo Vision | 运动恢复结构 Structure from Motion
 
 计算机视觉实验4：实现对极几何算法，包括8点算法和RANSAC框架进行基础矩阵估计。
 
-## Overview
+Computer Vision Experiment 4: Implementation of epipolar geometry algorithms including the 8-point algorithm and RANSAC framework for fundamental matrix estimation.
 
-This project implements two approaches for estimating the fundamental matrix between stereo image pairs:
+## 项目概述
 
-1. **Task 1**: Fundamental matrix estimation using 168 manually annotated matching points
-2. **Task 2**: Complete pipeline with SIFT feature detection, matching, and RANSAC-based robust estimation
+本项目实现了两种估计立体图像对之间基础矩阵的方法：
 
-## Features
+1. **任务1**：使用168对人工标注的匹配点进行基础矩阵估计
+2. **任务2**：完整流程，包括SIFT特征检测、匹配和基于RANSAC的鲁棒估计
 
-- 8-point algorithm with Hartley normalization
-- RANSAC framework for robust estimation
-- Epipole and epipolar line computation
-- SIFT feature detection and matching
-- Comprehensive visualization of results
-- Detailed experimental report generation (DOCX format)
+## 主要功能
 
-## Project Structure
+- 带Hartley归一化的8点算法
+- 用于鲁棒估计的RANSAC框架
+- 极点和极线计算
+- SIFT特征检测与匹配
+- 全面的结果可视化
+- 详细的实验报告生成（DOCX格式）
+
+## 项目结构
 
 ```
 experiment4/
 ├── src/
 │   ├── core/
-│   │   ├── fundamental_matrix.py    # 8-point algorithm, Hartley normalization
-│   │   ├── epipolar_geometry.py     # Epipole & epipolar line computation
-│   │   └── ransac.py                # RANSAC framework
+│   │   ├── fundamental_matrix.py    # 8点算法、Hartley归一化
+│   │   ├── epipolar_geometry.py     # 极点与极线计算
+│   │   └── ransac.py                # RANSAC框架
 │   ├── features/
-│   │   ├── detector.py              # SIFT feature detection
-│   │   └── matcher.py               # Feature matching
+│   │   ├── detector.py              # SIFT特征检测
+│   │   └── matcher.py               # 特征匹配
 │   ├── visualization/
-│   │   └── epipolar_vis.py          # Visualization utilities
+│   │   └── epipolar_vis.py          # 可视化工具
 │   └── utils/
-│       └── io_utils.py              # Data loading utilities
+│       └── io_utils.py              # 数据加载工具
 ├── scripts/
-│   ├── task1_given_matches.py       # Task 1 execution script
-│   ├── task2_full_pipeline.py       # Task 2 execution script
-│   └── compare_results.py           # Results comparison script
-├── results/                         # Experimental results
-│   ├── task1/                       # Task 1 results
-│   ├── task2/                       # Task 2 results
-│   └── comparison/                  # Comparison analysis
-├── generate_report.py               # Report generation script
+│   ├── task1_given_matches.py       # 任务1执行脚本
+│   ├── task2_full_pipeline.py       # 任务2执行脚本
+│   └── compare_results.py           # 结果对比脚本
+├── results/                         # 实验结果
+│   ├── task1/                       # 任务1结果
+│   ├── task2/                       # 任务2结果
+│   └── comparison/                  # 对比分析
+├── generate_report.py               # 报告生成脚本
 └── README.md
 ```
 
-## Requirements
+## 环境依赖
 
 ```bash
 numpy
@@ -62,110 +62,110 @@ matplotlib
 python-docx
 ```
 
-## Installation
+## 安装
 
 ```bash
 pip install numpy opencv-python matplotlib python-docx
 ```
 
-## Usage
+## 使用方法
 
-### Task 1: Given Matching Points
+### 任务1：给定匹配点
 
-Estimate fundamental matrix using 168 manually annotated matching points:
+使用168对人工标注的匹配点估计基础矩阵：
 
 ```bash
 python scripts/task1_given_matches.py
 ```
 
-Results:
-- Mean error: 0.069 px
-- Median error: 0.032 px
-- 168 matched points
+结果：
+- 平均误差：0.069 像素
+- 中位数误差：0.032 像素
+- 匹配点数：168对
 
-### Task 2: SIFT + RANSAC Pipeline
+### 任务2：SIFT + RANSAC 完整流程
 
-Complete pipeline with automatic feature detection and robust estimation:
+包含自动特征检测和鲁棒估计的完整流程：
 
 ```bash
 python scripts/task2_full_pipeline.py
 ```
 
-Results:
-- SIFT features detected: 498 (left), 465 (right)
-- Initial matches: 133
-- RANSAC inliers: 101 (75.9% inlier ratio)
-- Mean symmetric distance: 0.316 px
+结果：
+- 检测到的SIFT特征：498个（左图）、465个（右图）
+- 初始匹配数：133对
+- RANSAC内点：101个（内点率75.9%）
+- 平均对称距离：0.316 像素
 
-### Compare Results
+### 对比结果
 
-Compare the two approaches:
+对比两种方法的结果：
 
 ```bash
 python scripts/compare_results.py
 ```
 
-### Generate Report
+### 生成报告
 
-Generate comprehensive experimental report (DOCX with embedded images):
+生成包含嵌入图片的完整实验报告（DOCX格式）：
 
 ```bash
 python generate_report.py
 ```
 
-## Results Summary
+## 结果汇总
 
-| Metric | Task 1 | Task 2 |
-|--------|--------|--------|
-| Points/Inliers | 168 | 101 |
-| Mean Error (px) | 0.069 | 0.316 |
-| Median Error (px) | 0.032 | 0.154 |
-| Max Error (px) | 0.556 | 2.373 |
-| Inlier Ratio | - | 75.9% |
+| 指标 | 任务1 | 任务2 |
+|------|-------|-------|
+| 点数/内点数 | 168 | 101 |
+| 平均误差 (px) | 0.069 | 0.316 |
+| 中位数误差 (px) | 0.032 | 0.154 |
+| 最大误差 (px) | 0.556 | 2.373 |
+| 内点率 | - | 75.9% |
 
-## Key Algorithms
+## 核心算法
 
-### Hartley Normalization
-- Center points at origin (zero mean)
-- Scale to average distance √2
-- Improves numerical stability
+### Hartley归一化
+- 将点坐标平移至原点（零均值）
+- 缩放使平均距离为√2
+- 提高数值稳定性
 
-### 8-Point Algorithm
-1. Normalize point coordinates
-2. Construct constraint matrix from point correspondences
-3. Solve using SVD
-4. Enforce rank-2 constraint
-5. Denormalize to obtain final F
+### 8点算法
+1. 归一化点坐标
+2. 从点对应关系构建约束矩阵
+3. 使用SVD求解
+4. 强制秩为2约束
+5. 反归一化得到最终基础矩阵F
 
-### RANSAC Framework
-1. Randomly sample 8 point pairs
-2. Estimate F using 8-point algorithm
-3. Compute symmetric epipolar distances
-4. Count inliers below threshold
-5. Adaptive iteration with best model selection
+### RANSAC框架
+1. 随机采样8对点
+2. 使用8点算法估计F
+3. 计算对称极线距离
+4. 统计阈值内的内点数
+5. 自适应迭代并选择最佳模型
 
-### Epipole Computation
-- Left epipole: null space of F (SVD)
-- Right epipole: null space of F^T
+### 极点计算
+- 左极点：F的零空间（通过SVD求解）
+- 右极点：F^T的零空间
 
-## Visualization
+## 可视化
 
-The project generates multiple visualizations:
-- Matching points visualization
-- Epipolar lines overlaid on images
-- RANSAC inlier/outlier classification
-- Epipole comparison
+项目生成多种可视化结果：
+- 匹配点可视化
+- 叠加在图像上的极线
+- RANSAC内点/离群点分类
+- 极点对比
 
-## License
+## 许可证
 
 MIT License
 
-## Author
+## 作者
 
 **weizhena**
 
-Computer Vision Course - Experiment 4
+计算机视觉课程 - 实验4
 
-## Acknowledgments
+## 致谢
 
-Based on classical computer vision algorithms for epipolar geometry and structure from motion.
+基于经典的对极几何和运动恢复结构算法。
